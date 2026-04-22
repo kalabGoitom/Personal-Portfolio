@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalab · Frontend Developer</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome 6 Free -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ── BACKGROUND ──────────────────────────── -->
+    <div class="bg-canvas">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="noise"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- ── HEADER ──────────────────────────────── -->
+    <header id="header">
+      <div class="nav-inner">
+        <div class="logo">Kalab<span>.</span></div>
+
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#stack">Stack</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-controls">
+          <!-- Theme toggle (FA icon set by JS) -->
+          <button class="theme-btn" aria-label="Toggle theme">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <!-- Hamburger (mobile only) -->
+          <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── MOBILE MENU ──────────────────────────── -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home" class="menu-link">Home</a>
+      <a href="#about" class="menu-link">About</a>
+      <a href="#stack" class="menu-link">Stack</a>
+      <a href="#projects" class="menu-link">Projects</a>
+      <a href="#contact" class="menu-link">Contact</a>
+    </div>
+
+    <!-- ── HERO ────────────────────────────────── -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Text -->
+          <div class="hero-text">
+            <p class="hero-label">
+              <i
+                class="fa-solid fa-circle-dot"
+                style="font-size: 0.65rem; color: #22c55e"
+              ></i>
+              Available for work
+            </p>
+            <h1>Building the<br /><em>web,</em> pixel<br />by pixel.</h1>
+            <p class="hero-desc">
+              I'm Kalab — a frontend developer crafting fast, elegant, and
+              user-centered digital experiences. Let's build something
+              remarkable.
+            </p>
+            <div class="hero-cta">
+              <a href="#projects">
+                <button class="btn btn-primary">
+                  <i class="fa-solid fa-folder-open"></i> View Projects
+                </button>
+              </a>
+              <a href="#contact">
+                <button class="btn btn-ghost">
+                  <i class="fa-solid fa-envelope"></i> Get In Touch
+                </button>
+              </a>
+            </div>
+          </div>
+
+          <!-- Visual -->
+          <div class="hero-visual">
+            <div class="avatar-frame">
+              <img src="profile.png" alt="Kalab profile" />
+              <div class="avatar-overlay"></div>
+            </div>
+            <div class="floating-badge badge-1">
+              <i class="fa-solid fa-bolt" style="color: var(--accent)"></i>
+              Frontend Dev
+            </div>
+            <div class="floating-badge badge-2">
+              <span class="badge-dot"></span>
+              Open to opportunities
+            </div>
+          </div>
+        </div>
+
+        <!-- Scrolling tech marquee -->
+        <div class="marquee-wrap">
+          <div class="marquee-track" id="marqueeTrack"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ABOUT ────────────────────────────────── -->
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-img-wrap reveal">
+          <img
+            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&auto=format&fit=crop"
+            alt="coding"
+          />
+        </div>
+
+        <div class="about-text">
+          <p class="section-tag reveal">
+            <i class="fa-solid fa-user"></i>&nbsp; Who I am
+          </p>
+          <h2 class="section-title reveal reveal-delay-1">
+            Crafting digital experiences that matter.
+          </h2>
+          <p class="reveal reveal-delay-2">
+            I'm a frontend developer passionate about building clean,
+            responsive, and accessible websites. I love turning complex problems
+            into simple, beautiful interfaces.
+          </p>
+          <p class="reveal reveal-delay-2">
+            Currently studying data structures while freelancing for clients
+            across East Africa and beyond. When I'm not coding, I'm exploring
+            new UI trends and pushing what's possible on the web.
+          </p>
+          <div class="stats-row reveal reveal-delay-3">
+            <div class="stat">
+              <div class="stat-num">12+</div>
+              <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">8+</div>
+              <div class="stat-label">Clients</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">2+</div>
+              <div class="stat-label">Years exp.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STACK ────────────────────────────────── -->
+    <section id="stack" class="stack-section">
+      <div class="container">
+        <p class="section-tag reveal">
+          <i class="fa-solid fa-layer-group"></i>&nbsp; What I use
+        </p>
+        <h2 class="section-title reveal reveal-delay-1">My Tech Stack</h2>
+        <div class="tech-grid" id="techGrid"></div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ─────────────────────────────── -->
+    <section id="projects">
+      <div class="container">
+        <p class="section-tag reveal">
+          <i class="fa-solid fa-briefcase"></i>&nbsp; My work
+        </p>
+        <h2 class="section-title reveal reveal-delay-1">Featured Projects</h2>
+        <p
+          class="reveal reveal-delay-2"
+          style="color: var(--muted); max-width: 500px; line-height: 1.7"
+        >
+          A selection of things I've built. Each project taught me something
+          new.
+        </p>
+        <div class="projects-grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ──────────────────────────────── -->
+    <section id="contact">
+      <div class="container">
+        <p class="section-tag reveal">
+          <i class="fa-solid fa-paper-plane"></i>&nbsp; Say hello
+        </p>
+        <h2 class="section-title reveal reveal-delay-1">Let's Work Together</h2>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal reveal-delay-2">
+            <h3>Got a project in mind?</h3>
+            <p>
+              I'm currently available for freelance work and open to full-time
+              opportunities. Let's chat.
+            </p>
+            <div class="social-links">
+              <a class="social-link" href="#">
+                <div class="social-icon">
+                  <i class="fa-brands fa-github"></i>
+                </div>
+                <div>
+                  <div class="social-label">GitHub</div>
+                  <div class="social-handle">@kalabdev</div>
+                </div>
+              </a>
+              <a class="social-link" href="#">
+                <div class="social-icon">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <div>
+                  <div class="social-label">LinkedIn</div>
+                  <div class="social-handle">Kalab</div>
+                </div>
+              </a>
+              <a class="social-link" href="mailto:kalabgoitommerese@gmail.com">
+                <div class="social-icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <div class="social-label">Email</div>
+                  <div class="social-handle">kalabgoitommeresa@gmail.com</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <form
+            class="contact-form glass reveal reveal-delay-3"
+            style="padding: 32px"
+            onsubmit="handleSubmit(event)"
+          >
+            <div class="form-row">
+              <div class="field">
+                <label><i class="fa-solid fa-user fa-xs"></i> Name</label>
+                <input type="text" placeholder="Your name" required />
+              </div>
+              <div class="field">
+                <label><i class="fa-solid fa-at fa-xs"></i> Email</label>
+                <input type="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="field">
+              <label><i class="fa-solid fa-tag fa-xs"></i> Subject</label>
+              <input type="text" placeholder="Project inquiry" />
+            </div>
+            <div class="field">
+              <label><i class="fa-solid fa-message fa-xs"></i> Message</label>
+              <textarea
+                placeholder="Tell me about your project…"
+                required
+              ></textarea>
+            </div>
+            <button
+              class="btn btn-primary"
+              type="submit"
+              style="width: 100%; border-radius: 12px; justify-content: center"
+            >
+              Send Message <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ───────────────────────────────── -->
+    <footer>
+      <p>
+        <i class="fa-regular fa-copyright"></i> <span id="year"></span>
+        <span>Kalab</span>. Designed &amp; built with
+        <i
+          class="fa-solid fa-heart"
+          style="color: #f43f5e; font-size: 0.8rem"
+        ></i>
+      </p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
