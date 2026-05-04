@@ -129,43 +129,66 @@
 
     <!-- ── ABOUT ────────────────────────────────── -->
     <section id="about">
-      <div class="container about-grid">
-        <div class="about-img-wrap reveal">
-          <img
-            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&auto=format&fit=crop"
-            alt="coding"
-          />
-        </div>
+      <div class="container">
+        <div class="about-layout">
+          <!-- LEFT: stacked cards -->
+          <div class="about-cards-col">
+            <!-- Photo card -->
+            <div class="about-photo-card reveal">
+              <div class="about-photo-inner">
+                <img src="profile.png" alt="Kalab" />
+                <div class="about-photo-shine"></div>
+              </div>
+              <div class="about-nametag">
+                <span class="about-nametag-name">Kalab Goitom</span>
+                <span class="about-nametag-role">
+                  <i
+                    class="fa-solid fa-location-dot"
+                    style="color: var(--accent); font-size: 0.7rem"
+                  ></i>
+                  Frontend Developer · Addis Ababa 🇪🇹
+                </span>
+              </div>
+            </div>
 
-        <div class="about-text">
-          <p class="section-tag reveal">
-            <i class="fa-solid fa-user"></i>&nbsp; Who I am
-          </p>
-          <h2 class="section-title reveal reveal-delay-1">
-            Crafting digital experiences that matter.
-          </h2>
-          <p class="reveal reveal-delay-2">
-            I'm a frontend developer passionate about building clean,
-            responsive, and accessible websites. I love turning complex problems
-            into simple, beautiful interfaces.
-          </p>
-          <p class="reveal reveal-delay-2">
-            Currently studying data structures while freelancing for clients
-            across East Africa and beyond. When I'm not coding, I'm exploring
-            new UI trends and pushing what's possible on the web.
-          </p>
-          <div class="stats-row reveal reveal-delay-3">
-            <div class="stat">
-              <div class="stat-num">12+</div>
-              <div class="stat-label">Projects</div>
+            <!-- Rotating quote / fun-fact card -->
+            <div class="about-quote-card glass reveal reveal-delay-1">
+              <div class="quote-carousel" id="quoteCarousel"></div>
+              <div class="quote-dots" id="quoteDots"></div>
             </div>
-            <div class="stat">
-              <div class="stat-num">8+</div>
-              <div class="stat-label">Clients</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">2+</div>
-              <div class="stat-label">Years exp.</div>
+          </div>
+
+          <!-- RIGHT: text -->
+          <div class="about-text">
+            <p class="section-tag reveal">
+              <i class="fa-solid fa-user"></i>&nbsp; Who I am
+            </p>
+            <h2 class="section-title reveal reveal-delay-1">
+              Crafting digital experiences that matter.
+            </h2>
+            <p class="reveal reveal-delay-2">
+              I'm a frontend developer passionate about building clean,
+              responsive, and accessible websites. I love turning complex
+              problems into simple, beautiful interfaces.
+            </p>
+            <p class="reveal reveal-delay-2">
+              Currently studying data structures while freelancing for clients
+              across East Africa and beyond. When I'm not coding, I'm exploring
+              new UI trends and pushing what's possible on the web.
+            </p>
+            <div class="stats-row reveal reveal-delay-3">
+              <div class="stat">
+                <div class="stat-num">12+</div>
+                <div class="stat-label">Projects</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num">8+</div>
+                <div class="stat-label">Clients</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num">2+</div>
+                <div class="stat-label">Years exp.</div>
+              </div>
             </div>
           </div>
         </div>

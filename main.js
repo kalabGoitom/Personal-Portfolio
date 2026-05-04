@@ -26,12 +26,12 @@ const techs = [
     level: "Advanced",
     color: "#61dafb",
   },
-  {
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
-    name: "Firebase",
-    level: "Intermediate",
-    color: "#ffca28",
-  },
+  // {
+  //   logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+  //   name: "Firebase",
+  //   level: "Intermediate",
+  //   color: "#ffca28",
+  // },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
     name: "Python",
@@ -53,15 +53,15 @@ const techs = [
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
     name: "Figma",
-    level: "Intermediate",
+    level: "Beginner",
     color: "#f24e1e",
   },
-  {
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-    name: "Node.js",
-    level: "Intermediate",
-    color: "#339933",
-  },
+  // {
+  //   logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  //   name: "Node.js",
+  //   level: "Intermediate",
+  //   color: "#339933",
+  // },
 ];
 
 /* Projects — Unsplash real images */
@@ -115,7 +115,7 @@ const marqueeItems = [
   "CSS3",
   "JavaScript",
   "React",
-  "Firebase",
+  // "Firebase",
   "Python",
   "Responsive Design",
   "Web Animations",
@@ -306,6 +306,80 @@ function getYear() {
   footerYear.textContent = year;
 }
 
+/* ── QUOTE CAROUSEL ──────────────────────────────────── */
+function initQuoteCarousel() {
+  const carousel = document.getElementById("quoteCarousel");
+  const dotsWrap = document.getElementById("quoteDots");
+  if (!carousel || !dotsWrap) return;
+
+  const quotes = [
+    {
+      icon: "☕",
+      text: "I write better code after a good cup of <strong>buna</strong> — Ethiopian coffee hits different.",
+    },
+    {
+      icon: "🌍",
+      text: "Born and building in <strong>Addis Ababa</strong>. Every project is a little piece of home going online.",
+    },
+    {
+      icon: "💡",
+      text: '"The details are not the details. <strong>They make the design.</strong>" — Charles Eames',
+    },
+    {
+      icon: "🎯",
+      text: "My goal: make the web more accessible and beautiful <strong>one pixel at a time.</strong>",
+    },
+    {
+      icon: "📚",
+      text: "Student by day, freelancer by night — currently deep in <strong>data structures</strong> and loving it.",
+    },
+  ];
+
+  carousel.innerHTML = quotes
+    .map(
+      (q, i) => `
+      <div class="quote-slide${i === 0 ? " active" : ""}">
+        <span class="quote-icon">${q.icon}</span>
+        <p class="quote-text">${q.text}</p>
+      </div>`,
+    )
+    .join("");
+
+  dotsWrap.innerHTML = quotes
+    .map(
+      (_, i) =>
+        `<button class="q-dot${i === 0 ? " active" : ""}" data-idx="${i}" aria-label="Slide ${i + 1}"></button>`,
+    )
+    .join("");
+
+  let current = 0;
+  let timer;
+
+  function goTo(idx) {
+    carousel
+      .querySelectorAll(".quote-slide")
+      [current].classList.remove("active");
+    dotsWrap.querySelectorAll(".q-dot")[current].classList.remove("active");
+    current = idx;
+    carousel.querySelectorAll(".quote-slide")[current].classList.add("active");
+    dotsWrap.querySelectorAll(".q-dot")[current].classList.add("active");
+  }
+
+  function startTimer() {
+    timer = setInterval(() => goTo((current + 1) % quotes.length), 3800);
+  }
+
+  dotsWrap.querySelectorAll(".q-dot").forEach((dot) => {
+    dot.addEventListener("click", () => {
+      clearInterval(timer);
+      goTo(Number(dot.dataset.idx));
+      startTimer();
+    });
+  });
+
+  startTimer();
+}
+
 /* ── INIT ────────────────────────────────────────────── */
 document.addEventListener("DOMContentLoaded", () => {
   renderMarquee();
@@ -316,5 +390,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   initMobileMenu();
   initCursorGlow();
+  initQuoteCarousel();
   getYear();
 });
