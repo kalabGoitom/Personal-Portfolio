@@ -67,39 +67,44 @@ const techs = [
 /* Projects — Unsplash real images */
 const projects = [
   {
-    img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&auto=format&fit=crop",
-    tag: "SaaS · 2026",
-    title: "Mini Storefront Builder",
-    desc: "A tool that lets small businesses create a shareable one-page product/service showcase. Powered by Firebase.",
-    links: true,
+    img: "assets/taskFlow.png",
+    tag: "practice · 2026",
+    title: "TaskFlow",
+    desc: "A sleek task management app with drag-and-drop, local storage, and priority labels.",
+    links: "https://taskflow-green-two.vercel.app/",
+    githubLink: "https://github.com/kalabGoitom/TaskFlow",
   },
   {
-    img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&auto=format&fit=crop",
-    tag: "Client Work · 2025",
+    img: "assets/hhconsulting.png",
+    tag: "Client Work · 2026",
     title: "HH Consulting Portfolio",
     desc: "A full single-page portfolio site for an architectural & engineering firm based in Addis Ababa, Ethiopia.",
-    links: true,
+    links: "https://hhconsulting-jet.vercel.app/",
+    githubLink:
+      "https://github.com/kalabGoitom/-HH-Consulting-Architects-and-Engineers-PLC.",
   },
   {
     img: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=600&auto=format&fit=crop",
-    tag: "Academic · 2025",
+    tag: "Academic · 2026",
     title: "BST Bank System",
     desc: "A menu-driven Python bank account management system built on a Binary Search Tree with 8 core operations.",
     links: false,
   },
   {
-    img: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&auto=format&fit=crop",
-    tag: "Practice · 2025",
-    title: "To-Do App",
-    desc: "A clean task management app with local persistence, drag-to-reorder, and priority labels.",
-    links: true,
+    img: "assets/ForgeApp.png",
+    tag: "Practice · 2026",
+    title: "ForgeApp App",
+    desc: "A mobile-first workout tracking app that helps users log exercises, monitor progress, and manage fitness routines through a clean and intuitive UI, built with vanilla JavaScript.",
+    links: "https://forgeapp101.netlify.app/",
+    githubLink: "https://github.com/kalabGoitom/ForgeApp",
   },
   {
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop",
-    tag: "Freelance",
-    title: "Dashboard UI",
-    desc: "A responsive admin dashboard with real-time chart widgets, dark/light mode, and custom data tables.",
-    links: true,
+    img: "assets/expense tracker.png",
+    tag: "practice · 2026",
+    title: "Expense Tracker ",
+    desc: "A minimalist expense tracker with a clean UI, allowing users to log expenses, view summaries, and manage budgets, built with vanilla JavaScript.",
+    links: "https://expensetrackerv20.netlify.app/",
+    githubLink: "https://github.com/kalabGoitom/Expense-Tracker",
   },
   {
     img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&auto=format&fit=crop",
@@ -170,10 +175,14 @@ function renderProjects() {
           ${
             p.links
               ? `<button class="btn-sm btn-sm-primary">
-                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                <a href="${p.links}" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
                </button>
                <button class="btn-sm btn-sm-ghost">
+               <a href="${p.githubLink}" target="_blank" rel="noopener noreferrer">
                  <i class="fa-brands fa-github"></i> GitHub
+               </a>
                </button>`
               : `<button class="btn-sm btn-sm-ghost" disabled style="opacity:.5;cursor:default;">
                  <i class="fa-solid fa-clock"></i> Coming Soon
