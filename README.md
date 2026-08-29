@@ -15,6 +15,7 @@ A modern, Farm.js-inspired portfolio website built with React + Vite. Pure black
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js 18+ and npm (or pnpm/yarn)
 
 ### Installation
@@ -162,4 +163,4 @@ Reach out via email or GitHub for questions about the codebase or design decisio
 
 ---
 
-**Built with ❤️ from Addis Ababa, Ethiopia**
+**Built with from Addis Ababa, Ethiopia**
