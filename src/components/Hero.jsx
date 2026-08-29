@@ -1,5 +1,5 @@
-import React from 'react'
-import '../styles/Hero.css'
+import React from "react";
+import "../styles/Hero.css";
 
 export default function Hero() {
   return (
@@ -9,11 +9,13 @@ export default function Hero() {
           <span className="section-number">00 / Hero</span>
 
           <h1 className="hero-title reveal">
-            Frontend developer crafting clean, high-performance web experiences.
+            Fullstack developer crafting clean, high-performance web
+            experiences.
           </h1>
 
           <p className="hero-subtitle reveal">
-            I build fast, accessible, and user-centered digital products. Based in Addis Ababa, Ethiopia.
+            I build fast, accessible, and user-centered digital products. Based
+            in Addis Ababa, Ethiopia.
           </p>
 
           <div className="hero-cta reveal">
@@ -38,5 +40,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

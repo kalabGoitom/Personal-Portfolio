@@ -30,15 +30,43 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: all var(--transition-fast);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--color-text);
   text-decoration: none;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.03) 50%, transparent 100%);
+  transition: right 0.6s ease;
+  pointer-events: none;
+}
+
+html[data-theme="light"] .contact-link::before {
+  background: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.03) 50%, transparent 100%);
 }
 
 .contact-link:hover {
   border-color: var(--color-text);
   background-color: var(--color-bg-alt);
+  transform: translateX(4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="light"] .contact-link:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.contact-link:hover::before {
+  right: -100%;
 }
 
 .link-content {
@@ -64,6 +92,17 @@
 .link-icon {
   font-size: var(--font-size-xl);
   color: var(--color-text);
+  transition: all var(--transition-fast);
+}
+
+.contact-link:hover .link-icon {
+  transform: translateX(2px);
+}
+
+.contact-link i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-note {
@@ -73,6 +112,18 @@
   border: 1px solid var(--color-border);
   border-radius: 0;
   background-color: var(--color-bg-alt);
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 140px;
+}
+
+.contact-note:hover {
+  border-color: var(--color-text);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.03);
+}
+
+html[data-theme="light"] .contact-note:hover {
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.03);
 }
 
 .contact-note p {
@@ -105,8 +156,13 @@
     font-size: var(--font-size-sm);
   }
 
+  .link-icon {
+    font-size: var(--font-size-lg);
+  }
+
   .contact-note {
     padding: var(--space-6);
+    min-height: auto;
   }
 
   .contact-note p {

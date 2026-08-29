@@ -4,6 +4,17 @@ import '../styles/Header.css'
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [theme, setTheme] = useState('dark')
+
+  useEffect(() => {
+    // Get theme from localStorage or system preference
+    const savedTheme = localStorage.getItem('theme')
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light')
+    
+    setTheme(initialTheme)
+    document.documentElement.setAttribute('data-theme', initialTheme)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,9 +25,18 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark'
+    setTheme(newTheme)
+    document.documentElement.setAttribute('data-theme', newTheme)
+    localStorage.setItem('theme', newTheme)
+  }
+
   const handleNavClick = () => {
     setIsMobileMenuOpen(false)
   }
+
+  const isDark = theme === 'dark'
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
@@ -26,15 +46,26 @@ export default function Header() {
             <a href="#home">Kalab<span>.</span></a>
           </div>
 
-          <button
-            className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          <div className="nav-actions">
+            <button
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              title={`${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
+            >
+              <i className={`fas fa-${isDark ? 'sun' : 'moon'}`}></i>
+            </button>
+
+            <button
+              className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
 
           <ul className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
             <li><a href="#home" onClick={handleNavClick}>Home</a></li>

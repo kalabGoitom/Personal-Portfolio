@@ -66,12 +66,14 @@ export default function Projects() {
                 {project.description}
               </p>
 
-              <div className="project-links">
+              <div className="project-footer">
                 <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-link">
-                  Live Demo →
+                  <span>Live Demo</span>
+                  <i className="fas fa-arrow-up-right-from-square"></i>
                 </a>
                 <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
-                  GitHub →
+                  <span>GitHub</span>
+                  <i className="fab fa-github"></i>
                 </a>
               </div>
             </article>

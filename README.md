@@ -20,7 +20,7 @@ A modern, Farm.js-inspired portfolio website built with React + Vite. Pure black
 ### Installation
 
 ```bash
-cd 
+cd kalab-portfolio
 npm install
 ```
 
