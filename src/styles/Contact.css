@@ -1,0 +1,125 @@
+.contact {
+  padding: var(--space-32) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.contact .section-title {
+  margin-bottom: var(--space-6);
+}
+
+.contact .section-intro {
+  margin-bottom: var(--space-16);
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.contact-link {
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all var(--transition-fast);
+  color: var(--color-text);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.contact-link:hover {
+  border-color: var(--color-text);
+  background-color: var(--color-bg-alt);
+}
+
+.link-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.link-name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.link-value {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  font-weight: var(--font-weight-regular);
+}
+
+.link-icon {
+  font-size: var(--font-size-xl);
+  color: var(--color-text);
+}
+
+.contact-note {
+  display: flex;
+  align-items: center;
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  background-color: var(--color-bg-alt);
+}
+
+.contact-note p {
+  margin: 0;
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+/* ── MOBILE ────────────────────────────────────── */
+@media (max-width: 768px) {
+  .contact {
+    padding: var(--space-16) 0;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .contact-link {
+    padding: var(--space-4);
+  }
+
+  .link-name {
+    font-size: var(--font-size-xs);
+  }
+
+  .link-value {
+    font-size: var(--font-size-sm);
+  }
+
+  .contact-note {
+    padding: var(--space-6);
+  }
+
+  .contact-note p {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-link {
+    padding: var(--space-3);
+  }
+
+  .link-icon {
+    font-size: var(--font-size-base);
+  }
+}
