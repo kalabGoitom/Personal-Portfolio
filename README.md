@@ -1,18 +1,18 @@
-# Kalab · Frontend Developer Portfolio
+# Personal Portfolio
 
-A modern, Farm.js-inspired portfolio website built with React + Vite. Pure black background, clean typography, and high-contrast design focused on content.
+A modern, minimal portfolio website built with React + Vite. Clean design, smooth animations, and responsive layout showcasing my work and skills.
 
-## 🎨 Design Highlights
+## 🎨 Features
 
-- **Pure black + white aesthetic** — No accent colors, minimal styling
-- **Numbered sections** (00/ Hero, 01/ About, 02/ Work, 03/ Stack, 04/ Contact) following Farm.js visual language
-- **Text-focused hero** — Clean, bold headlines with generous whitespace
-- **Fully responsive** — Mobile, tablet, and desktop optimized
-- **Smooth animations** — Subtle scroll-triggered reveals
-- **Dark mode only** — Modern, premium feel
+- **Clean, minimalist design** — Modern aesthetic with focus on content
+- **Fully responsive** — Optimized for mobile, tablet, and desktop
+- **Smooth scroll animations** — Scroll-triggered reveals and transitions
+- **Dark mode** — Easy on the eyes, professional appearance
+- **Fast and lightweight** — Built with Vite for optimal performance
 - **Accessible** — Semantic HTML, keyboard navigation, focus states
+- **Easy to customize** — Simple component structure for quick updates
 
-## 🚀 Quick Start
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -21,17 +21,16 @@ A modern, Farm.js-inspired portfolio website built with React + Vite. Pure black
 ### Installation
 
 ```bash
-cd kalab-portfolio
 npm install
 ```
 
-### Development
+### Development Server
 
 ```bash
 npm run dev
 ```
 
-Opens http://localhost:5173 in your browser. Hot module reloading enabled.
+Opens http://localhost:5173 in your browser with hot module reloading.
 
 ### Production Build
 
@@ -39,9 +38,9 @@ Opens http://localhost:5173 in your browser. Hot module reloading enabled.
 npm run build
 ```
 
-Outputs optimized files to `dist/` directory.
+Creates an optimized production build in the `dist/` directory.
 
-### Preview Built Site
+### Preview Production Build
 
 ```bash
 npm run preview
@@ -50,53 +49,51 @@ npm run preview
 ## 📁 Project Structure
 
 ```
-kalab-portfolio/
-├── index.html                 # Entry point
-├── src/
-│   ├── main.jsx              # React root
-│   ├── App.jsx               # Main component
-│   ├── components/           # React components
-│   │   ├── Header.jsx
-│   │   ├── Hero.jsx
-│   │   ├── About.jsx
-│   │   ├── Projects.jsx
-│   │   ├── Stack.jsx
-│   │   ├── Contact.jsx
-│   │   └── Footer.jsx
-│   └── styles/               # Component styles
-│       ├── index.css         # Global styles
-│       ├── Header.css
-│       ├── Hero.css
-│       ├── About.css
-│       ├── Projects.css
-│       ├── Stack.css
-│       ├── Contact.css
-│       └── Footer.css
-├── package.json
-├── vite.config.js
-└── README.md
+src/
+├── main.jsx                   # React entry point
+├── App.jsx                    # Main application component
+├── components/                # Reusable React components
+│   ├── Header.jsx            # Navigation header
+│   ├── Hero.jsx              # Hero section
+│   ├── About.jsx             # About me section
+│   ├── Projects.jsx          # Projects showcase
+│   ├── Stack.jsx             # Technology stack
+│   ├── Contact.jsx           # Contact section
+│   └── Footer.jsx            # Footer
+├── hooks/                     # Custom React hooks
+│   └── useScrollReveal.js    # Scroll animation hook
+└── styles/                    # Component stylesheets
+    ├── index.css             # Global styles
+    ├── Header.css
+    ├── Hero.css
+    ├── About.css
+    ├── Projects.css
+    ├── Stack.css
+    ├── Contact.css
+    └── Footer.css
 ```
 
 ## 🛠 Tech Stack
 
-- **React 18** — UI library
-- **Vite 5** — Build tool & dev server
-- **CSS3** — No frameworks, pure CSS with custom properties
-- **JavaScript (ES6+)** — Modern syntax, no transpilation needed
+- **React 18** — Modern UI library for building interactive components
+- **Vite** — Fast build tool and development server
+- **CSS3** — Custom styling with CSS variables and animations
+- **JavaScript (ES6+)** — Modern JavaScript for interactive features
 
-## 🎯 Customization
+## ✏️ Customization
 
 ### Update Your Information
 
-- **Hero**: Edit `Hero.jsx` for headline, tagline, and metadata
-- **About**: Update `About.jsx` with your bio and stats
-- **Projects**: Modify the `projects` array in `Projects.jsx`
-- **Stack**: Edit the `skillCategories` array in `Stack.jsx`
-- **Contact**: Update links in `Contact.jsx`
+- **Header**: Edit [Header.jsx](src/components/Header.jsx) for navigation links
+- **Hero**: Update [Hero.jsx](src/components/Hero.jsx) with your name, title, and introduction
+- **About**: Customize [About.jsx](src/components/About.jsx) with your bio and achievements
+- **Projects**: Modify project data in [Projects.jsx](src/components/Projects.jsx)
+- **Skills**: Update technology stack in [Stack.jsx](src/components/Stack.jsx)
+- **Contact**: Add your contact information in [Contact.jsx](src/components/Contact.jsx)
 
-### Change Colors
+### Styling
 
-Edit CSS variables in `src/styles/index.css`:
+Global styles are in [src/styles/index.css](src/styles/index.css). Customize:
 
 ```css
 :root {
@@ -107,60 +104,46 @@ Edit CSS variables in `src/styles/index.css`:
 }
 ```
 
-### Modify Typography
-
-Adjust font sizes and weights in `src/styles/index.css`:
-
-```css
---font-size-5xl: 4.5rem;
---font-weight-bold: 700;
-```
+Update colors, fonts, and spacing to match your personal brand.
 
 ## 🌐 Deployment
 
 ### Deploy to Vercel (Recommended)
 
-```bash
-npm i -g vercel
-vercel
-```
-
-Follow the prompts. Automatic deployments on git push.
+1. Push your code to GitHub
+2. Import your repository in [Vercel](https://vercel.com)
+3. Automatic deployments on every push
 
 ### Deploy to Netlify
 
-1. Build locally: `npm run build`
-2. Drag & drop `dist/` folder to Netlify, or
-3. Connect your Git repo to Netlify for automatic deployments
+1. Build the project: `npm run build`
+2. Connect your Git repo to [Netlify](https://netlify.com) for automatic deployments
 
-### Deploy to Other Hosts
+### Deploy to GitHub Pages
 
-Upload the `dist/` folder contents to your hosting provider (GitHub Pages, AWS S3, etc.).
+1. Update `vite.config.js` with your repository name
+2. Run `npm run build`
+3. Deploy the `dist/` folder to GitHub Pages
 
-## 📊 Performance
+## ⚡ Performance
 
-- **Dev start**: ~250ms (with Vite)
-- **Build size**: ~25KB gzipped
-- **LCP**: < 1.5s
-- **Fully responsive** from 320px to 4K+
+- **Fast build times** with Vite
+- **Optimized bundle** with code splitting
+- **Mobile-first design** for fast loading on all devices
+- **Responsive** from mobile to desktop screens
 
 ## ♿ Accessibility
 
 - Semantic HTML structure
-- ARIA labels on interactive elements
 - Keyboard navigation support
-- Focus visible states
-- Respects `prefers-reduced-motion`
-- High contrast text (white on black)
+- High contrast text for readability
+- Respects user motion preferences
+- Screen reader friendly
 
-## 📝 License
+## 📄 License
 
-Free to use and modify for personal or commercial projects.
+Feel free to use this portfolio template as inspiration for your own site.
 
-## 🤝 Questions?
+## 💬 Contact
 
-Reach out via email or GitHub for questions about the codebase or design decisions.
-
----
-
-**Built with from Addis Ababa, Ethiopia**
+For questions or feedback, reach out through the contact section on the website.
