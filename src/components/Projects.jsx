@@ -4,6 +4,15 @@ import "../styles/Projects.css";
 const projects = [
   {
     id: 1,
+    name: "NOVA Digital Restaurant Menu",
+    description:
+      "Full-stack digital menu platform for an Ethiopian restaurant. Customers browse today’s available dishes with category filters, while admins manage reusable menu items and curate the daily selection through a secure dashboard.",
+    tags: ["React", "Node.js", "Express", "PostgreSQL", "Prisma", "JWT"],
+    live: "https://nova-digital-restaurant-menu.vercel.app/",
+    github: "https://github.com/kalabGoitom/Digital-restaurant-menu",
+  },
+  {
+    id: 2,
     name: "TaskFlow",
     description:
       "A sleek task management app with local storage, and priority labels.",
@@ -12,7 +21,7 @@ const projects = [
     github: "https://github.com/kalabGoitom/TaskFlow",
   },
   {
-    id: 2,
+    id: 3,
     name: "HH Consulting",
     description:
       "Full single-page portfolio site for an architectural & engineering firm in Addis Ababa.",
@@ -22,7 +31,7 @@ const projects = [
       "https://github.com/kalabGoitom/-HH-Consulting-Architects-and-Engineers-PLC.",
   },
   {
-    id: 3,
+    id: 4,
     name: "ForgeApp",
     description:
       "Mobile-first workout tracking app with exercise logging and progress monitoring.",
@@ -31,7 +40,7 @@ const projects = [
     github: "https://github.com/kalabGoitom/ForgeApp",
   },
   {
-    id: 4,
+    id: 5,
     name: "Expense Tracker",
     description:
       "Minimalist expense tracker for logging, summaries, and budget management.",
